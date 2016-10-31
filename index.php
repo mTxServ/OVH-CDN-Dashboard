@@ -1,15 +1,15 @@
 <?php
 
 /**
- * Convert octect to Mo
- * 
+ * Convert octect to Mo.
+ *
  * @param decimal $octet
- * 
+ *
  * @return decimal
  */
 function formatBytes($octet)
 {
-    return round($octet/(1024*1024), 2);
+    return round($octet / (1024 * 1024), 2);
 }
 
 require_once 'inc/OvhApi.php';
@@ -76,7 +76,7 @@ $api = new OvhApi($api_url, $api_ak, $api_as, $api_ck);
           } else {
               $page = 'index';
           }
-          
+
           require_once 'pages/' . $page . '.php';
           ?>
         </div>

@@ -15,12 +15,12 @@ $quotas = $api->get('/cdn/dedicated/' . $cdn . '/quota?period=day');
             </tr>
         </thead>
         <tbody>
-            <?php $graph = array(); ?>
+            <?php $graph = []; ?>
             <?php foreach ($quotas as $values): ?>
                 <?php
                 $dt = new DateTime($values->date);
                 ?>
-                <?php $graph[] = array($dt->format('U') * 1000, (float) formatBytes($values->value)) ?>
+                <?php $graph[] = [$dt->format('U') * 1000, (float) formatBytes($values->value)] ?>
             <tr>
                 <td><?=$dt->format('d-M-Y H:i:s') ?></td>
                 <td><?=formatBytes($values->value) ?>Mo</td>
